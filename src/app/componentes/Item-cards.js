@@ -12,7 +12,7 @@ function ItemCards(x) {
                 <div className="card-body">
                     <h5 className="card-title item-nome mb-1" style={{userSelect:'none'}}>{x.nome}</h5>
                     <p className="item-grade text-secondary mb-1" style={{userSelect:'none'}}>{`${x.grade}`.replaceAll(',',' | ')}</p>
-                    <p className="item-cod text-secondary fs-6 mb-1">{`Cod: ${x.cod}`}</p>
+                    <p className="item-cod d-none d-md-flex text-secondary fs-6 mb-1">{`Cod: ${x.cod}`}</p>
                     <p className="card-text text-dark item-preco" style={{userSelect:'none'}}>{`R$ ${x.preco}`}</p>
                     <div className='btn btn-dark item-btn d-flex align-items-center justify-content-center' onClick={(e)=>{
                         console.log(x)
