@@ -34,9 +34,9 @@ export default function Home() {
 
   return (
     <div>
-      {/* <div className='btn btn-danger' onClick={(e) => {
+      <div className='btn btn-danger' onClick={(e) => {
         setDados(firebaseDados().filter(e => e.colecao == "NACIONAL"))
-      }}>G</div> */}
+      }}>G</div>
 
       <Label label='Moda Nacional'></Label>
       <div className='grid'>
