@@ -8,8 +8,9 @@ import Navbar from "../componentes/navbar";
 
 const querySnapshot = await getDocs(collection(db, 'NACIONAL'))
 
-
 function Moda_nacional() {
+    const [data, setData] = useState([])
+    const [grade, setGrade] = useState('G')
 
     function dadosFirebase() {
 
@@ -22,30 +23,23 @@ function Moda_nacional() {
         return dados
     }
 
-    function grades() {
-        let dados = []
-
-        function pushDados() {
-            querySnapshot.forEach(e => dados.push(e.data().grade))
-        }
-        pushDados()
-        return dados
-    }
-
-    const [data, setData] = useState([])
-
     useEffect(() => {
         setData(dadosFirebase())
-        setGrade(grades())
     }, [])
+
+    useEffect(()=>{
+        setData(dadosFirebase().filter(e=> e.grade== grade))
+    },[grade])
 
     return (
 
         <div className="">
+            <div className="btn btn-danger" onClick={() => {
+                setGrade('GG')
+            }}>Click</div>
             <div className="grid">
                 {data.map(e => {
                     return (
-
                         <ItemCards nome={e.nome} preco={e.preco} img={e.img} grade={e.grade} key={e.cod} ></ItemCards>
                     )
                 })}
@@ -56,3 +50,4 @@ function Moda_nacional() {
 }
 
 export default Moda_nacional
+

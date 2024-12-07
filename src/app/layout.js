@@ -25,7 +25,6 @@ let links = ['Camisetas Nacionais', 'Importadas Malha Peruana', 'Importadas fio 
 
 export default function RootLayout({ children }) {
   return (
-
     <html lang="pt-br">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navbar logo="Grife Chic" title="Moda Masculina" links={links} keys={links} ></Navbar>

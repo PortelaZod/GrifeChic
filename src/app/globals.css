@@ -73,8 +73,7 @@ a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: .5em;
-  position: sticky;
-  top: 0;
+
 }
 
 .cd1 {
@@ -109,9 +108,6 @@ a {
   margin: auto;
 }
 
-
-
-
 .whatsIcon {
   animation: beating .8s infinite;
 }
@@ -137,8 +133,19 @@ a {
   white-space: nowrap;
 }
 
+.sideBar{
+  transition: all .5s;
+  top: 0;
+  left: 0;
+}
 
+.display{
+  left: 0;
+}
 
+.outDisplay{
+  left: -200%;
+}
 
 
 @media screen and (min-width: 320) {
@@ -148,7 +155,7 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: .3em;
     justify-content: center;
-    margin-bottom: 50;
+    margin-bottom: 16;
   }
 
   .cd1 {
@@ -194,7 +201,7 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: .3em;
     justify-content: center;
-    margin-bottom: 50;
+    margin-bottom: 16;
   }
 
   .cd1 {
@@ -240,7 +247,7 @@ a {
     grid-template-columns: repeat(2, 1fr);
     gap: .3em;
     justify-content: center;
-    margin-bottom: 50;
+    margin-bottom: 16;
   }
 
   .cd1 {
@@ -286,7 +293,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: .3em;
     justify-content: center;
-    margin-bottom: 50;
+    margin-bottom: 16;
   }
 
   .item-img {
@@ -308,7 +315,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: .3em;
     justify-content: center;
-    margin-bottom: 50;
+    margin-bottom: 16;
   }
 
   .item-nome {
@@ -334,7 +341,7 @@ a {
     grid-template-columns: repeat(4, 1fr);
     gap: .3em;
     justify-content: center;
-    margin-bottom: 50;
+    margin-bottom: 16;
   }
 
   .item-nome {

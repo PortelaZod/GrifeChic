@@ -1,6 +1,8 @@
 'use client'
 import Image from "next/image"
 
+
+
 function ItemCards(x) {
     return (
 
@@ -14,8 +16,8 @@ function ItemCards(x) {
                     <p className="item-grade text-secondary mb-1" style={{userSelect:'none'}}>{`${x.grade}`.replaceAll(',',' | ')}</p>
                     <p className="item-cod d-none d-md-flex text-secondary fs-6 mb-1">{`Cod: ${x.cod}`}</p>
                     <p className="card-text text-dark item-preco" style={{userSelect:'none'}}>{`R$ ${x.preco}`}</p>
-                    <div className='btn btn-dark item-btn d-flex align-items-center justify-content-center' onClick={(e)=>{
-                        console.log(x)
+                    <div className='btn btn-dark item-btn d-flex align-items-center justify-content-center add-btn' onClick={(e)=>{
+                        // console.log(x)
                     }}> Adicionar <Image src='/layout_imgs/bag.png' className="ms-1" width={20} height={20} alt="não Encontrada" ></Image></div>
                 </div>
             </div>
