@@ -9,7 +9,7 @@ function ItemCards(x) {
         <div >
             <div className="cd1 card">
                 <div className="img-container">
-                <Image className="card-img-top item-img" src={x.img} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt="Camiseta"></Image>
+                <Image className="card-img-top item-img" src={x.img} priority={true} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt="Camiseta"></Image>
                 </div>
                 <div className="card-body">
                     <h5 className="card-title item-nome mb-1" style={{userSelect:'none'}}>{x.nome}</h5>

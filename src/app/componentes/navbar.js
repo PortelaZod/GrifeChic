@@ -9,10 +9,8 @@ import infoIcon from '@/app/layout_imgs/information-button.png'
 import barIcon from '@/app/layout_imgs/Menu_Bar.png'
 import searchIcon from '@/app/layout_imgs/search.png'
 import Link from 'next/link'
-import searchContext from '../searchContext'
-import { Children, useState, useContext } from 'react'
-
-
+import SearchContext from '../searchContext'
+import { useState, useContext } from 'react'
 
 
 function Navbar(x) {
@@ -27,9 +25,12 @@ function Navbar(x) {
         document.querySelector('.search').classList.toggle('d-none')
     }
 
+    const [search, setSearch] = useState(0)
+
+
     let addBtns = document.querySelectorAll('.add-btn')
     addBtns.forEach(btn => btn.addEventListener('click', (e) => {
-        document.querySelector('.sideBar').classList.remove('outDisplay')
+        // document.querySelector('.sideBar').classList.remove('outDisplay')
     }))
 
     return (
@@ -53,7 +54,7 @@ function Navbar(x) {
 
                         <div className='d-flex align-items-center d-md-none '>
                             <input className='search_bar form-control m-auto me-1 d-none' onBlur={(e) => {
-
+                                setSearch(e.target.value)
                             }}></input>
 
                             <Image className='search me-2 d-none' src={searchIcon} width={25} height={25} alt='search' onClick={() => {
@@ -85,12 +86,12 @@ function Navbar(x) {
             </div>
 
             <div className="links links_desktop d-none d-lg-flex bg-black justify-content-around container-fluid">
-                {x.links.map(e => { return <Link className="p-2 fw-bold" href='./sobre' key={e.valor}>{e}</Link> })}
+                {x.links.map(e => { return <Link className="p-2 fw-bold" href='./sobre' key={e.id}>{e.link}</Link> })}
             </div>
 
             <div className='carousel_links_container d-flex justify-content-around w-100 bg-black d-lg-none'>
                 <div className="links bg-black d-flex justify-content-center align-items-center carousel_links">
-                    {x.links.map(e => { return <Link className="p-1" href='#imp' key={e.links}>{e}</Link> })}
+                    {x.links.map(e => { return <Link className="p-1" href='#imp' key={e.id}>{e.link}</Link> })}
                 </div>
             </div>
 
@@ -109,7 +110,7 @@ function Navbar(x) {
             </div>{/* sm-navbar */}
 
             {/* sidebar */}
-            <div className='bg-light position-fixed w-100 h-100 z-3 d-flex sideBar outDisplay'>
+            {/* <div className='bg-light position-fixed w-100 h-100 z-3 d-flex sideBar outDisplay'>
                 <div className='card'>
                     <Image className='card-img-top' src={''} fill alt='item'></Image>
                 </div>
@@ -120,7 +121,8 @@ function Navbar(x) {
                     }}>Voltar</span>
                     <span className='btn btn-dark' >Adicionar</span>
                 </span>
-            </div>{/* sidebar */}
+            </div> */}
+            {/* sidebar */}
 
         </div>
     )

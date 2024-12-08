@@ -1,21 +1,18 @@
 'use client'
 import ItemCards from "../componentes/Item-cards";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { db } from "../componentes/Firebase";
 import { getDocs, collection } from "firebase/firestore";
-import Label from "../componentes/label-block";
-import Navbar from "../componentes/navbar";
+import searchContext from "../searchContext";
+import { useContext } from "react";
 
 const querySnapshot = await getDocs(collection(db, 'NACIONAL'))
 
 function Moda_nacional() {
     const [data, setData] = useState([])
-    const [grade, setGrade] = useState('G')
-
+   
     function dadosFirebase() {
-
         let dados = []
-
         function pushDados() {
             querySnapshot.forEach(e => dados.push(e.data()))
         }
@@ -27,16 +24,13 @@ function Moda_nacional() {
         setData(dadosFirebase())
     }, [])
 
-    useEffect(()=>{
-        setData(dadosFirebase().filter(e=> e.grade== grade))
-    },[grade])
-
     return (
 
         <div className="">
             <div className="btn btn-danger" onClick={() => {
-                setGrade('GG')
+                
             }}>Click</div>
+
             <div className="grid">
                 {data.map(e => {
                     return (
@@ -44,8 +38,8 @@ function Moda_nacional() {
                     )
                 })}
             </div>
-        </div>
 
+        </div>
     )
 }
 

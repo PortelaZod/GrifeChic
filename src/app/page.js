@@ -7,7 +7,6 @@ import { db } from './componentes/Firebase.js';
 import { collection, getDocs } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
 
-
 const grifeChicDb = await getDocs(collection(db, 'grife_chic'))
 export default function Home() {
 
@@ -38,7 +37,7 @@ export default function Home() {
         <div className='row_ ms-2'>
           {nacional.map(e => {
             return (
-              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
             )
           })}
         </div>
@@ -49,7 +48,7 @@ export default function Home() {
         <div className='row_ ms-2'>
           {imp.map(e => {
             return (
-              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
             )
           })}
         </div>
@@ -60,7 +59,7 @@ export default function Home() {
         <div className='row_ ms-2'>
           {if40.map(e => {
             return (
-              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
             )
           })}
         </div>
@@ -71,7 +70,7 @@ export default function Home() {
         <div className='row_ ms-2'>
           {cp.map(e => {
             return (
-              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
             )
           })}
         </div>
@@ -82,7 +81,7 @@ export default function Home() {
         <div className='row_ ms-2'>
           {ps.map(e => {
             return (
-              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
             )
           })}
         </div>
@@ -93,7 +92,7 @@ export default function Home() {
         <div className='row_ ms-2 mb-5'>
           {bs.map(e => {
             return (
-              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
             )
           })}
         </div>
