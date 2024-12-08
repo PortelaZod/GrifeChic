@@ -34,67 +34,73 @@ export default function Home() {
 
   return (
     <div>
-      <div className='btn btn-danger' onClick={(e) => {
-        setDados(firebaseDados().filter(e => e.colecao == "NACIONAL"))
-      }}>G</div>
-
-      <Label label='Moda Nacional'></Label>
-      <div className='grid'>
-        {nacional.map(e => {
-          return (
-            <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
-          )
-        })}
+      <Label label='Camisetas Nacionais'></Label>
+      <div className='overFlowContainer mb-3'>
+        <div className='row_ ms-2'>
+          {nacional.map(e => {
+            return (
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+            )
+          })}
+        </div>
       </div>
 
       <Label label='Importadas Malha Peruana' ></Label>
-      <div className='grid'>
-        {imp.map(e => {
-          return (
-            <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
-          )
-        })}
+      <div className='overFlowContainer'>
+        <div className='row_ ms-2'>
+          {imp.map(e => {
+            return (
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+            )
+          })}
+        </div>
       </div>
 
       <Label label='Importadas Fio 40.1' ></Label>
-      <div className='grid'>
-        {if40.map(e => {
-          return (
-            <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
-          )
-        })}
+      <div className='overFlowContainer'>
+        <div className='row_ ms-2'>
+          {if40.map(e => {
+            return (
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+            )
+          })}
+        </div>
       </div>
 
       <Label label='Camisetas Polo' ></Label>
-      <div className='grid'>
-        {cp.map(e => {
-          return (
-            <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
-          )
-        })}
+      <div className='overFlowContainer'>
+        <div className='row_ ms-2'>
+          {cp.map(e => {
+            return (
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+            )
+          })}
+        </div>
       </div>
 
       <Label label='Moda Plus Size' ></Label>
-      <div className='grid'>
-        {ps.map(e => {
-          return (
-            <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
-          )
-        })}
+      <div className='overFlowContainer'>
+        <div className='row_ ms-2'>
+          {ps.map(e => {
+            return (
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+            )
+          })}
+        </div>
       </div>
 
       <Label label='Bermudas e Shorts' ></Label>
-      <div className='grid' style={{marginBottom:50}}>
-        {bs.map(e => {
-          return (
-            <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
-          )
-        })}
+      <div className='overFlowContainer'>
+        <div className='row_ ms-2 mb-5'>
+          {bs.map(e => {
+            return (
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod}></ItemCards>
+            )
+          })}
+        </div>
       </div>
 
-
-
-    </div>
+    </div >
   );
 
 }

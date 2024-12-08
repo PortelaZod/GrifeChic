@@ -62,7 +62,7 @@ function Navbar(x) {
 
             <div className='carousel_links_container d-flex justify-content-around w-100 bg-black d-lg-none'>
                 <div className="links bg-black d-flex justify-content-center align-items-center carousel_links">
-                    {x.links.map(e => { return <Link className="p-1" href='#imp' key={e.valor}>{e}</Link> })}
+                    {x.links.map(e => { return <Link className="p-1" href='#imp' key={e.links}>{e}</Link> })}
                 </div>
             </div>
 
