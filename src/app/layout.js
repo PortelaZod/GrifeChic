@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./componentes/navbar";
 import Image from "next/image";
 import whatsCard from '../../public/layout_imgs/Carousel_whtas.jpeg'
+import searchContext from "./searchContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",

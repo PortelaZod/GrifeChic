@@ -7,14 +7,25 @@ import userIcon from '@/app/layout_imgs/user_.png'
 import whatsIcon from '@/app/layout_imgs/whatsappIcon.png'
 import infoIcon from '@/app/layout_imgs/information-button.png'
 import barIcon from '@/app/layout_imgs/Menu_Bar.png'
-import homeIcon from '@/app/layout_imgs/home.png'
+import searchIcon from '@/app/layout_imgs/search.png'
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
-import { doc } from 'firebase/firestore'
+import searchContext from '../searchContext'
+import { Children, useState, useContext } from 'react'
+
 
 
 
 function Navbar(x) {
+
+    function ocultar() {
+        document.querySelector('.logo').classList.toggle('d-none')
+        document.querySelector('.nome_logo').classList.toggle('d-none')
+        document.querySelector('.bag').classList.toggle('d-none')
+        document.querySelector('.whatsIcon').classList.toggle('d-none')
+        document.querySelector('.search_bar').classList.toggle('d-none')
+        document.querySelector('.seachIcon').classList.toggle('d-none')
+        document.querySelector('.search').classList.toggle('d-none')
+    }
 
     let addBtns = document.querySelectorAll('.add-btn')
     addBtns.forEach(btn => btn.addEventListener('click', (e) => {
@@ -25,21 +36,38 @@ function Navbar(x) {
         <div className='position-sticky top-0 z-2'>
             <div className="navbar bg-light">
                 <div className="container-fluid">
-                    <Image src={logo} height={30} width={30} alt='logo' className='no_select'></Image>
-                    <p className="navbar-brand text-dark h1 no_select m-0 p-0">{x.logo}</p>
+                    <Image className='no_select logo' src={logo} height={25} width={25} alt='logo'></Image>
+
+                    <p className="nome_logo navbar-brand text-dark h1 no_select m-0 p-0">{x.logo}</p>
+
                     <div className="user_area d-flex align-items-center justify-content-around">
-                        <div className='d-flex me-3'>
-                            <Image src={bagIcon} height={30} alt='Shopping Bag' />
+
+                        <div className='bag d-flex me-2'>
+                            <Image src={bagIcon} width={25} height={25} alt='Shopping Bag' />
                             <p className='text-danger fw-bold m-0'>0</p>
                         </div >
 
-                        <Image src={whatsIcon} height={26} width={26} className='whatsIcon me-3' alt='Whats'></Image>
+                        <Image src={whatsIcon} height={25} width={25} className='whatsIcon me-2' alt='Whats'></Image>
 
-                        <Image src={instagranIcon} height={26} width={26} className='me-3 d-none d-lg-flex' alt='Whats'></Image>
+                        <Image src={instagranIcon} height={25} width={25} className='me-2 d-none d-lg-flex' alt='Whats'></Image>
+
+                        <div className='d-flex align-items-center d-md-none '>
+                            <input className='search_bar form-control m-auto me-1 d-none' onBlur={(e) => {
+
+                            }}></input>
+
+                            <Image className='search me-2 d-none' src={searchIcon} width={25} height={25} alt='search' onClick={() => {
+                                ocultar()
+                            }}></Image>
+                        </div>
+
+                        <Image className='me-2 seachIcon' src={searchIcon} width={25} height={25} alt='search' onClick={() => {
+                            ocultar()
+                        }}></Image>
 
                         {/* Usuario */}
                         <span className='d-none d-lg-flex flex-row justify-content-center align-items-center'>
-                            <Image src={userIcon} alt='User' width={30} height={30}></Image>
+                            <Image src={userIcon} alt='User' width={25} height={25}></Image>
                             <p className='ms-2 m-0 text-dark User no_select'>Perfil</p>
                         </span>{/* Usuario */}
 

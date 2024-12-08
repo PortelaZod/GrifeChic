@@ -19,6 +19,10 @@ export default function Home() {
     return dados;
   }
 
+  useEffect(() => {
+    setDados(firebaseDados())
+  }, [])
+
   const [dados, setDados] = useState([])
   const nacional = dados.filter(e => e.colecao == "NACIONAL")
   const imp = dados.filter(e => e.colecao == "IMPORTADAS_PERUANAS")
@@ -26,11 +30,6 @@ export default function Home() {
   const cp = dados.filter(e => e.colecao == "CAMISETAS_POLO")
   const bs = dados.filter(e => e.colecao == "BERMUDAS_E_SHORTS")
   const ps = dados.filter(e => e.plus == true)
-
-
-  useEffect(() => {
-    setDados(firebaseDados())
-  }, [])
 
   return (
     <div>

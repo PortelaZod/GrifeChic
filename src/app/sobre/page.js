@@ -1,19 +1,21 @@
 'use client'
-import { useState } from "react"
+import { useContext,useState } from "react"
+import searchContext from "../searchContext"
 
 
 function sobre() {
+    const [state, SetState] = useState()
 
-    const [state, SetState] = useState(0)
-    
 
     return (
+
         <div>
-            <h1>{state}</h1>
+            <h1>{'search'}</h1>
             <button className="btn btn-danger" onClick={()=>{
                 SetState( state+1 )
             }} >Add</button>
         </div>
+
     )
 
     return sobre

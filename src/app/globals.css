@@ -161,6 +161,7 @@ a {
   left: -200%;
 }
 
+
 @media screen and (min-width: 320) {
   .grid {
     width: 95%;
