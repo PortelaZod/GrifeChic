@@ -4,7 +4,12 @@ import { use, useContext, useEffect, useState } from "react";
 import { db } from "../componentes/Firebase";
 import { getDocs, collection } from "firebase/firestore";
 
-const querySnapshot = await getDocs(collection(db, 'grife_chic'))
+ async function fb(){
+    const querySnapshot = await getDocs(collection(db, 'grife_chic'))
+    return querySnapshot
+}
+
+
 
 function Moda_nacional() {
     const [data, setData] = useState([])
@@ -12,7 +17,7 @@ function Moda_nacional() {
     function dadosFirebase() {
         let dados = []
         function pushDados() {
-            querySnapshot.forEach(e => dados.push(e.data()))
+            fb().forEach(e => dados.push(e.data()))
         }
         pushDados()
         return dados

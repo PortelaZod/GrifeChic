@@ -15,14 +15,13 @@ import imgBanner3 from '@/app/layout_imgs/Carousel_whtas.jpeg'
 import LoadingAnimation from '@/app/componentes/loading.js'
 
 
+const grifeChicDb = await getDocs(collection(db, 'grife_chic'))
 
-
-export default async function  Home() {
-  const grifeChicDb = await getDocs(collection(db, 'grife_chic'))
-
-  function firebaseDados() {
+export default function  Home() {
+  
+   function firebaseDados() {
     let dados = []
-    grifeChicDb.forEach(e => {
+      grifeChicDb.forEach(e => {
       dados.push(e.data())
     });
     return dados;
