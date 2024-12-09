@@ -16,7 +16,7 @@ import LoadingAnimation from '@/app/componentes/loading.js'
 
 
 
-const grifeChicDb = await getDocs(collection(db, 'grife_chic'))
+const grifeChicDb = getDocs(collection(db, 'grife_chic'))
 export default function Home() {
 
 
