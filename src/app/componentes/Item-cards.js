@@ -10,7 +10,7 @@ function ItemCards(x) {
         <div >
             <div className="cd1 card">
                 <div className="img-container">
-                <Image className="card-img-top item-img" src={x.img} priority={true} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" alt="Camiseta" onLoad={(e)=>{
+                <Image className="card-img-top item-img" src={x.img} width={150} height={150} alt="Camiseta" onLoad={(e)=>{
                     // setDisplay('d-none')
                 }}></Image>
                 </div>
