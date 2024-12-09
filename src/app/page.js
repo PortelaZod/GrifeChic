@@ -13,7 +13,6 @@ import imgBanner from '@/app/layout_imgs/carousel.jpeg'
 import imgBanner2 from '@/app/layout_imgs/Promo Black FRIDAY.jpeg'
 import imgBanner3 from '@/app/layout_imgs/Carousel_whtas.jpeg'
 import LoadingAnimation from '@/app/componentes/loading.js'
-import { MainContext } from './contexto.js';
 
 
 
