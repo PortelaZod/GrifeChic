@@ -16,9 +16,9 @@ import LoadingAnimation from '@/app/componentes/loading.js'
 
 
 
-const grifeChicDb = getDocs(collection(db, 'grife_chic'))
-export default function Home() {
 
+export default async function  Home() {
+  const grifeChicDb = await getDocs(collection(db, 'grife_chic'))
 
   function firebaseDados() {
     let dados = []
