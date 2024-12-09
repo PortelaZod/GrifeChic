@@ -42,7 +42,7 @@ export default function Home() {
 
 
   return (
-    <div>
+    <div className='bg-light'>
 
       <Banner src={imgBanner}></Banner>
 

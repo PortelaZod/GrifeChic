@@ -1,4 +1,5 @@
 'use client'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCards from "../componentes/Item-cards";
 import { use, useContext, useEffect, useState } from "react";
 import { db } from "../componentes/Firebase";
