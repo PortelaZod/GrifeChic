@@ -61,9 +61,11 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ContextoProverdor>
-          <Navbar logo="Grife Chic" title="Moda Masculina" links={links} keys={links} ></Navbar>
-          {/* <a href='#' className="main_card container-fluid mt-3"><Image className="main_card_img" src={whatsCard} width={750} height={320} alt="CardWhats"></Image></a> */}
-          {children}
+          <div className="w-100">
+            <Navbar logo="Grife Chic" title="Moda Masculina" links={links} keys={links} ></Navbar>
+            {/* <a href='#' className="main_card container-fluid mt-3"><Image className="main_card_img" src={whatsCard} width={750} height={320} alt="CardWhats"></Image></a> */}
+            {children}
+          </div>
         </ContextoProverdor>
       </body>
     </html>
