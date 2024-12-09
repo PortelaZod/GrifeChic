@@ -50,7 +50,7 @@ export default function  Home() {
         <div className='row_ ms-2'>
           {nacional.map(e => {
             return (
-              <ItemCards nome={e.name} preco={e.preco} img='/layout_imgs/cardPeruana.jpeg' grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
             )
           })}
         </div>
