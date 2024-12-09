@@ -25,7 +25,7 @@ function Moda_nacional() {
 
     return (
 
-        <div className="mt-2 mb-5">
+        <div className="mt-2 mb-5 bg-light">
             <div className="grid">
                 {data.map(e => {
                     return (
