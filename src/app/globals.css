@@ -161,6 +161,22 @@ a {
   left: -200%;
 }
 
+.banner_container{
+  overflow: hidden;
+  width: 100%;
+}
+
+.banner_container p{
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.banner{
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
 
 @media screen and (min-width: 320) {
   .grid {

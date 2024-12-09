@@ -1,16 +1,14 @@
 'use client'
 import ItemCards from "../componentes/Item-cards";
-import { use, useEffect, useState } from "react";
+import { use, useContext, useEffect, useState } from "react";
 import { db } from "../componentes/Firebase";
 import { getDocs, collection } from "firebase/firestore";
-import searchContext from "../searchContext";
-import { useContext } from "react";
 
-const querySnapshot = await getDocs(collection(db, 'NACIONAL'))
+const querySnapshot = await getDocs(collection(db, 'grife_chic'))
 
 function Moda_nacional() {
     const [data, setData] = useState([])
-   
+
     function dadosFirebase() {
         let dados = []
         function pushDados() {
@@ -21,24 +19,19 @@ function Moda_nacional() {
     }
 
     useEffect(() => {
-        setData(dadosFirebase())
+        setData(dadosFirebase().filter(e=> e.colecao == 'NACIONAL'))
     }, [])
 
     return (
 
-        <div className="">
-            <div className="btn btn-danger" onClick={() => {
-                
-            }}>Click</div>
-
+        <div className="mt-2 mb-5">
             <div className="grid">
                 {data.map(e => {
                     return (
-                        <ItemCards nome={e.nome} preco={e.preco} img={e.img} grade={e.grade} key={e.cod} ></ItemCards>
+                        <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} key={e.cod} ></ItemCards>
                     )
                 })}
             </div>
-
         </div>
     )
 }

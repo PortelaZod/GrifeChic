@@ -4,11 +4,22 @@ import ItemCards from './componentes/Item-cards.js';
 import Label from './componentes/label-block.js';
 import Navbar from './componentes/navbar.js';
 import { db } from './componentes/Firebase.js';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, doc, getDocs } from 'firebase/firestore';
 import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import Image from 'next/image.js';
+import Banner from '@/app/componentes/Mbanner.js'
+import imgBanner from '@/app/layout_imgs/carousel.jpeg'
+import imgBanner2 from '@/app/layout_imgs/Promo Black FRIDAY.jpeg'
+import imgBanner3 from '@/app/layout_imgs/Carousel_whtas.jpeg'
+import LoadingAnimation from '@/app/componentes/loading.js'
+import { MainContext } from './contexto.js';
+
+
 
 const grifeChicDb = await getDocs(collection(db, 'grife_chic'))
 export default function Home() {
+
 
   function firebaseDados() {
     let dados = []
@@ -30,10 +41,14 @@ export default function Home() {
   const bs = dados.filter(e => e.colecao == "BERMUDAS_E_SHORTS")
   const ps = dados.filter(e => e.plus == true)
 
+
   return (
     <div>
+
+      <Banner src={imgBanner}></Banner>
+
       <Label label='Camisetas Nacionais'></Label>
-      <div className='overFlowContainer mb-3'>
+      <div className='overFlowContainer'>
         <div className='row_ ms-2'>
           {nacional.map(e => {
             return (
@@ -53,6 +68,9 @@ export default function Home() {
           })}
         </div>
       </div>
+
+      <Label label='Itens em Oferta' ></Label>
+      <Banner src={imgBanner2}></Banner>
 
       <Label label='Importadas Fio 40.1' ></Label>
       <div className='overFlowContainer'>
@@ -75,6 +93,9 @@ export default function Home() {
           })}
         </div>
       </div>
+
+      <Label label='Atendimento' ></Label>
+      <Banner src={imgBanner3}></Banner>
 
       <Label label='Moda Plus Size' ></Label>
       <div className='overFlowContainer'>
