@@ -6,7 +6,6 @@ import { db } from "../componentes/Firebase";
 import { getDocs, collection } from "firebase/firestore";
 
 const querySnapshot = await getDocs(collection(db, 'grife_chic'))
-
 function Moda_nacional() {
     const [data, setData] = useState([])
 
@@ -25,7 +24,7 @@ function Moda_nacional() {
 
     return (
 
-        <div className="mt-2 mb-5 bg-light">
+        <div className="mt-2 mb-5 bg-light overflow-scroll">
             <div className="grid">
                 {data.map(e => {
                     return (
