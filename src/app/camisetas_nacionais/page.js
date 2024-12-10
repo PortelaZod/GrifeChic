@@ -19,19 +19,16 @@ function Moda_nacional() {
     }
 
     useEffect(() => {
-        setData(dadosFirebase().filter(e=> e.colecao == 'NACIONAL'))
+        setData(dadosFirebase().filter(e => e.colecao == 'NACIONAL'))
     }, [])
 
     return (
-
-        <div className="mt-2 mb-5 bg-light overflow-scroll">
-            <div className="grid">
-                {data.map(e => {
-                    return (
-                        <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} key={e.cod} ></ItemCards>
-                    )
-                })}
-            </div>
+        <div className='grid mb-5'>
+            {data.map(e => {
+                return (
+                    <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} key={e.cod} ></ItemCards>
+                )
+            })}
         </div>
     )
 }
