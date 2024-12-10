@@ -23,7 +23,7 @@ function Moda_nacional() {
     }, [])
 
     return (
-        <div className='grid mb-5 W-100'>
+        <div className='grid mb-5 W-100 overFlowContainer'>
             {data.map(e => {
                 return (
                     <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} key={e.cod} ></ItemCards>
