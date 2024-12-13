@@ -74,7 +74,7 @@ function Navbar(x) {
                         {/* Usuario */}
                         <span className='d-none d-lg-flex flex-row justify-content-center align-items-center'>
                             <Image src={userIcon} alt='User' width={25} height={25}></Image>
-                            <p className='ms-2 m-0 text-dark User no_select'>{user}</p>
+                            <p className='ms-2 m-0 text-dark User no_select'>{'Perfil'}</p>
                         </span>{/* Usuario */}
 
                     </div>
@@ -83,7 +83,7 @@ function Navbar(x) {
                     <span className='btn btn-dark bg-black entrar_btn' onClick={(e) => {
                         document.querySelector('.entrar_btn').classList.toggle('d-none')
                         document.querySelector('.sair_btn').classList.toggle('d-none')
-                        setUser('Jefferson')
+                        
                     }}>Entrar</span>
                     <span className='btn btn-danger d-none sair_btn' style={{ width: 68 }} onClick={() => {
                         document.querySelector('.entrar_btn').classList.toggle('d-none')
@@ -122,7 +122,7 @@ function Navbar(x) {
 
                 <a href='' className='d-flex flex-column align-items-center text-decoration-none mt-1'>
                     <Image src={userIcon} alt='User' width={15} height={15} className=''></Image>
-                    <p className='m-0 text-dark User'>{user}</p>
+                    <p className='m-0 text-dark User'>{'Perfil'}</p>
                 </a>
 
                 <Image src={barIcon} width={25} height={25} alt='menu'></Image>

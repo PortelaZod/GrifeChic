@@ -6,7 +6,7 @@ export const MainContext = createContext()
 
 export function ContextoProverdor(props) {
 
-    const [user, setUser] = useState('Usuário')
+    const [user, setUser] = useState('')
 
 
     return (

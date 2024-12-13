@@ -13,15 +13,20 @@ import imgBanner from '@/app/layout_imgs/carousel.jpeg'
 import imgBanner2 from '@/app/layout_imgs/Promo Black FRIDAY.jpeg'
 import imgBanner3 from '@/app/layout_imgs/Carousel_whtas.jpeg'
 import LoadingAnimation from '@/app/componentes/loading.js'
+import ImgCard from './componentes/imgCard.js';
+import { MainContext } from './contexto.js';
+
+
+import demo from '@/app/layout_imgs/cardPeruana.jpeg'
 
 
 const grifeChicDb = await getDocs(collection(db, 'grife_chic'))
 
-export default function  Home() {
-  
-   function firebaseDados() {
+export default function Home() {
+
+  function firebaseDados() {
     let dados = []
-      grifeChicDb.forEach(e => {
+    grifeChicDb.forEach(e => {
       dados.push(e.data())
     });
     return dados;
@@ -38,10 +43,10 @@ export default function  Home() {
   const cp = dados.filter(e => e.colecao == "CAMISETAS_POLO")
   const bs = dados.filter(e => e.colecao == "BERMUDAS_E_SHORTS")
   const ps = dados.filter(e => e.plus == true)
-
+  const [user,setUser] = useContext(MainContext)
 
   return (
-    <div className='bg-light'>
+    <div className='bg-light w-100 overflow-hidden' style={{ height: 'fit-content' }}>
 
       <Banner src={imgBanner}></Banner>
 
@@ -50,7 +55,7 @@ export default function  Home() {
         <div className='row_ ms-2'>
           {nacional.map(e => {
             return (
-              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
+              <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod} ></ItemCards>
             )
           })}
         </div>
@@ -107,8 +112,8 @@ export default function  Home() {
       </div>
 
       <Label label='Bermudas e Shorts' ></Label>
-      <div className='overFlowContainer'>
-        <div className='row_ ms-2 mb-5'>
+      <div className='overFlowContainer mb-5'>
+        <div className='row_ ms-2'>
           {bs.map(e => {
             return (
               <ItemCards nome={e.name} preco={e.preco} img={e.img} grade={e.grade} cod={e.cod} key={e.cod}></ItemCards>
@@ -116,6 +121,37 @@ export default function  Home() {
           })}
         </div>
       </div>
+
+        <p style={{margin:100}}>{user.preco}</p>
+
+
+      {/* <Label label='Marcas'></Label>
+      <div className='grid2 border border1 border-danger' style={{ marginBottom: '53px' }}>
+
+
+        <div className=''>
+          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
+        </div>
+        <div className=''>
+          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
+        </div>
+        <div className=''>
+          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
+        </div>
+        <div className=''>
+          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
+        </div>
+        <div className=''>
+          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
+        </div>
+        <div className=''>
+          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
+        </div>
+
+
+
+      </div> */}
+
 
     </div >
   );
