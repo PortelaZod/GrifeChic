@@ -14,11 +14,7 @@ import imgBanner2 from '@/app/layout_imgs/Promo Black FRIDAY.jpeg'
 import imgBanner3 from '@/app/layout_imgs/Carousel_whtas.jpeg'
 import LoadingAnimation from '@/app/componentes/loading.js'
 import ImgCard from './componentes/imgCard.js';
-import { MainContext } from './contexto.js';
-
-
-import demo from '@/app/layout_imgs/cardPeruana.jpeg'
-
+import { MainContext } from './contextos/contexto.js';
 
 const grifeChicDb = await getDocs(collection(db, 'grife_chic'))
 
@@ -121,37 +117,6 @@ export default function Home() {
           })}
         </div>
       </div>
-
-        <p style={{margin:100}}>{user.preco}</p>
-
-
-      {/* <Label label='Marcas'></Label>
-      <div className='grid2 border border1 border-danger' style={{ marginBottom: '53px' }}>
-
-
-        <div className=''>
-          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
-        </div>
-        <div className=''>
-          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
-        </div>
-        <div className=''>
-          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
-        </div>
-        <div className=''>
-          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
-        </div>
-        <div className=''>
-          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
-        </div>
-        <div className=''>
-          <ImgCard url={demo} nome={'Cavalera'}></ImgCard>
-        </div>
-
-
-
-      </div> */}
-
 
     </div >
   );

@@ -10,15 +10,11 @@ import barIcon from '@/app/layout_imgs/Menu_Bar.png'
 import searchIcon from '@/app/layout_imgs/search.png'
 import Link from 'next/link'
 import { useState, useContext } from 'react'
-import { MainContext } from '@/app/contexto.js'
+import { MainContext } from '@/app/contextos/contexto.js'
 import Moda_nacional from '../camisetas_nacionais/page'
+import { ContextoItem } from '../contextos/contextoItem'
 
 function paths(x) {
-    // if(x == 0){
-    //     return '/camisetas_nacionais'
-    // }
-    // return ''
-
     switch (true) {
         case (x == 0):
             return '/camisetas_nacionais'
@@ -41,13 +37,6 @@ function paths(x) {
 }
 
 function Navbar(x) {
-    const [user, setUser] = useContext(MainContext)
-
-    // let addBtns = document.querySelectorAll('.add-btn')
-    // addBtns.forEach(btn => btn.addEventListener('click', (e) => {
-    //     // document.querySelector('.sideBar').classList.remove('outDisplay')
-    // }))
-
     return (
         <div className='position-sticky top-0 z-2'>
             <div className="navbar bg-light">
@@ -83,7 +72,7 @@ function Navbar(x) {
                     <span className='btn btn-dark bg-black entrar_btn' onClick={(e) => {
                         document.querySelector('.entrar_btn').classList.toggle('d-none')
                         document.querySelector('.sair_btn').classList.toggle('d-none')
-                        
+
                     }}>Entrar</span>
                     <span className='btn btn-danger d-none sair_btn' style={{ width: 68 }} onClick={() => {
                         document.querySelector('.entrar_btn').classList.toggle('d-none')
@@ -128,23 +117,9 @@ function Navbar(x) {
                 <Image src={barIcon} width={25} height={25} alt='menu'></Image>
             </div>{/* footer mobile */}
 
-            {/* sidebar */}
-            {/* <div className='bg-light position-fixed w-100 h-100 z-3 d-flex sideBar outDisplay'>
-                <div className='card'>
-                    <Image className='card-img-top' src={''} fill alt='item'></Image>
-                </div>
-
-                <span className='position-absolute bottom-0 mb-3 w-100 d-flex justify-content-around align-itens-center'>
-                    <span className='btn btn-danger' onClick={(e) => {
-                        e.target.parentElement.parentElement.classList.add('outDisplay')
-                    }}>Voltar</span>
-                    <span className='btn btn-dark' >Adicionar</span>
-                </span>
-            </div> */}
-            {/* sidebar */}
-
         </div>
     )
 }
+
 
 export default Navbar

@@ -4,8 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from "./componentes/navbar";
 import Image from "next/image";
 import whatsCard from '../../public/layout_imgs/Carousel_whtas.jpeg'
-import { ContextoProverdor } from "./contexto";
-
+import { ContextoProverdor } from "./contextos/contexto";
+import {ProvedorItemContext} from '@/app/contextos/contextoItem'
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -61,10 +61,12 @@ export default function RootLayout({ children }) {
     <html lang="pt-br">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <ContextoProverdor>
+          <ProvedorItemContext>
           <div className="w-100">
             <Navbar logo="Grife Chic" title="Moda Masculina" links={links} keys={links} ></Navbar>
             {children}
           </div>
+          </ProvedorItemContext>
         </ContextoProverdor>
       </body>
     </html>

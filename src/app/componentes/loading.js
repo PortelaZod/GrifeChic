@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { MainContext } from "../contexto"
+import { MainContext } from "../contextos/contexto"
 
 
 

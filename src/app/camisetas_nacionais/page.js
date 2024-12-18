@@ -1,9 +1,11 @@
 'use client'
+import "./globals.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemCards from "../componentes/Item-cards";
 import { use, useContext, useEffect, useState } from "react";
 import { db } from "../componentes/Firebase";
 import { getDocs, collection } from "firebase/firestore";
+
 
 const querySnapshot = await getDocs(collection(db, 'grife_chic'))
 function Moda_nacional() {
